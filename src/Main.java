@@ -10,9 +10,9 @@ import UI.Ui;
  + Mehsullar
  + Satis elave etmek - satis elave edilerken hansi mehsullardan hansi sayda satis oldugu gonderilir
  + Satisdan mehsulun geri qaytarilmasi
- - Umumi satisin geri qaytarilmasi
- - Verilen tarix araligina gore hemin tarix araligina olan satislarin qaytarilmasi
- - Verilen bir tarixe gore hemin tarix (il,ay,gun) ucun olan satislarin qaytarilmasi
+ + Umumi satisin geri qaytarilmasi
+ + Verilen tarix araligina gore hemin tarix araligina olan satislarin qaytarilmasi
+ + Verilen bir tarixe gore hemin tarix (il,ay,gun) ucun olan satislarin qaytarilmasi
  - Verilmis mebleg araligina gore edilmis satislarin qaytarilmasi
  + Verilmis nomreye esasen satisin qaytarilmasi
  - Yeni mehsul elave etmek
@@ -39,7 +39,7 @@ import UI.Ui;
     + 3 Satisin silinmesi - satisin nomresine esasen silinmesi
     + 4 Butun satislarin ekrana cixarilmasi (nomresi,meblegi,mehsul sayi,tarixi)
     + 5 Verilen tarix araligina gore satislarin gosterilmesi - userden qebul edilen iki tarix araligindaki satislarin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi)
-    - 6 Verilen mebleg araligina gore satislarin gosterilmesi - userden qebul edilen iki mebleg araligindaki satislarin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi)
+    + 6 Verilen mebleg araligina gore satislarin gosterilmesi - userden qebul edilen iki mebleg araligindaki satislarin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi)
     + 7 Verilmis bir tarixde olan satislarin gosterilmesi  - userden qebul edilmis bir tarixde olan satislarin gosterilmesi(nomresi,meblegi,mehsul sayi,tarixi)
     + 8 Verilmis nomreye esasen hemin nomreli satisin melumatlarinin gosterilmesi - userden qebul edilmis nomdereye esasen hemin nomreli satisin melumatlarinin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi, satis itemlari (nomresi,mehsul adi,sayi))"
      */

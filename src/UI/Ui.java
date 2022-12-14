@@ -68,8 +68,8 @@ public class Ui {
                         "    - 4 Butun mehsullari goster - butun mehsullar gosterilecek (kodu,adi,categoriyasi,sayi,qiymeti)\n" +
                         "    - 5 Categoriyasina gore mehsullari goster - usere var olan kateqoriyalar gosteilecek ve onlar arasinda bir secim etmelidir ve secilmis kateqoriyadan olan butun mehsullar gosterilir (kodu,adi,categoriyasi,sayi,qiymeti)\n" +
                         "    - 6 Qiymet araligina gore mehsullari goster - userden minmum ve maximum qiymetleri daxil etmesi istenilir ve hemin qiymet araliginda olan mehsullar gosterilir (kodu, adi,categoriyasi,sayi,qiymeti)\n" +
-                        "    - 7 Mehsullar arasinda ada gore axtaris et - useden text daxil etmesi istenilir ve adinda hemin text olan butun mehsullar gosterilir (kodu, adi,categoriyasi,sayi,qiymeti)" +
-                                "    - 8 Başlanğıca dön" +
+                        "    - 7 Mehsullar arasinda ada gore axtaris et - useden text daxil etmesi istenilir ve adinda hemin text olan butun mehsullar gosterilir (kodu, adi,categoriyasi,sayi,qiymeti)\n"
+                                + "    - 8 Başlanğıca dön \n" +
                 "Enter number: ");
         Scanner scanner = new Scanner(System.in);
 
@@ -124,8 +124,8 @@ public class Ui {
                 "    - 5 Verilen tarix araligina gore satislarin gosterilmesi - userden qebul edilen iki tarix araligindaki satislarin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi)\n" +
                 "    - 6 Verilen mebleg araligina gore satislarin gosterilmesi - userden qebul edilen iki mebleg araligindaki satislarin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi)\n" +
                 "    - 7 Verilmis bir tarixde olan satislarin gosterilmesi  - userden qebul edilmis bir tarixde olan satislarin gosterilmesi(nomresi,meblegi,mehsul sayi,tarixi)\n" +
-                "    - 8 Verilmis nomreye esasen hemin nomreli satisin melumatlarinin gosterilmesi - userden qebul edilmis nomdereye esasen hemin nomreli satisin melumatlarinin gosterilmesi " +
-                        "\"    - 9  Başlanğıca geriyə dön" +
+                "    - 8 Verilmis nomreye esasen hemin nomreli satisin melumatlarinin gosterilmesi - userden qebul edilmis nomdereye esasen hemin nomreli satisin melumatlarinin gosterilmesi\n" +
+                        "    - 9  Başlanğıca dön\n" +
                 "Enter number: ");
         Scanner scanner = new Scanner(System.in);
 
@@ -159,6 +159,7 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 6:
+                    findReceiptsByPriceRange();
                     whileBreaker = false;
                     break;
                 case 7:
@@ -252,6 +253,16 @@ public class Ui {
         String input = scanner.nextLine();
 
         System.out.println(repo.findReceiptsBySpecificDate(input));
+
+        run(repo);
+
+    }
+    public static void findReceiptsByPriceRange(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter price range. Format: [Min price] [Max price]");
+        String input = scanner.nextLine();
+
+        System.out.println(repo.findReceiptsByPriceRange(input));
 
         run(repo);
 

@@ -189,6 +189,26 @@ public class Repository {
         return receiptsOut;
     }
 
+    public List<Receipt> findReceiptsByPriceRange(String dates){
+        List<Receipt> receiptsOut = new ArrayList<>();
+        String [] inputArr = dates.split(" ");
+        double minPrice = Double.parseDouble(inputArr[0]);
+        double maxPrice = Double.parseDouble(inputArr[1]);
+
+
+
+        for (int i = 0; i< receiptsList.size(); i++){
+            double price = receiptsList.get(i).getPrice();
+
+            if (price > minPrice && price < maxPrice){
+                receiptsOut.add(receiptsList.get(i));
+            }
+        }
+
+        return receiptsOut;
+    }
+
+
 
 
 }
