@@ -240,6 +240,36 @@ public class Repository {
         return false;
     }
 
+    public List<Item> findItemsByPriceRange(String dates){
+        List<Item> itemsListOut = new ArrayList<>();
+        String [] inputArr = dates.split(" ");
+        double minPrice = Double.parseDouble(inputArr[0]);
+        double maxPrice = Double.parseDouble(inputArr[1]);
+
+
+
+        for (int i = 0; i< itemsList.size(); i++){
+            double price = itemsList.get(i).getPrice();
+
+            if (price > minPrice && price < maxPrice){
+                itemsListOut.add(itemsList.get(i));
+            }
+        }
+
+        return itemsListOut;
+    }
+
+    public List<Item> findItemsByName(String namePart){
+        List<Item> itemsListOut = new ArrayList<>();
+        for (int i = 0; i< itemsList.size(); i++){
+            if (itemsList.get(i).getName().contains(namePart)){
+                itemsListOut.add(itemsList.get(i));
+            }
+        }
+
+        return itemsListOut;
+    }
+
 
 
 

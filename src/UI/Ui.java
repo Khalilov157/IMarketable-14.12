@@ -102,9 +102,11 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 6:
+                    findItemsByPriceRange();
                     whileBreaker = false;
                     break;
                 case 7:
+                    findItemsByName();
                     whileBreaker = false;
                     break;
                 case 8:
@@ -312,6 +314,27 @@ public class Ui {
 
         run(repo);
 
+    }
+
+    public static void findItemsByPriceRange(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter price range. Format: [Min price] [Max price]");
+        String input = scanner.nextLine();
+
+        System.out.println(repo.findItemsByPriceRange(input));
+
+        run(repo);
+
+    }
+
+    public static void findItemsByName(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter item name: ");
+        String input = scanner.nextLine();
+
+        System.out.println(repo.findItemsByName(input));
+
+        run(repo);
     }
 
 
