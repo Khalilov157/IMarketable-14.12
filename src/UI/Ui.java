@@ -1,5 +1,6 @@
 package UI;
 
+import Models.ItemCategorie;
 import Models.Receipt;
 import Repositories.Repository;
 
@@ -88,6 +89,7 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 3:
+                    removeItem();
                     whileBreaker = false;
                     break;
 
@@ -96,6 +98,7 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 5:
+                    getItemsByCategory();
                     whileBreaker = false;
                     break;
                 case 6:
@@ -263,6 +266,49 @@ public class Ui {
         String input = scanner.nextLine();
 
         System.out.println(repo.findReceiptsByPriceRange(input));
+
+        run(repo);
+
+    }
+
+    public static void getItemsByCategory(){
+        ItemCategorie[] yourEnums = ItemCategorie.values();
+        String categories = "Kateqoriyalar: ";
+        for (int i = 0; i< yourEnums.length; i++){
+            categories =  categories + i + " - " + yourEnums[i] + "; ";
+        }
+        System.out.println(categories);
+        Scanner scanner = new Scanner(System.in);
+
+        int input = 0;
+
+        boolean whileBreaker = true;
+
+        while (whileBreaker){
+            input = scanner.nextInt();
+
+            if (input >=0 && input <5) {
+                repo.findItemsOfCategory(yourEnums[input]);
+                run(repo);
+                whileBreaker = false;
+            } else {
+
+                    System.out.println("Wrong option! Enter number from 1-4: ");}
+//                run();
+//                whileBreaker = false;
+            }}
+
+
+    public static void removeItem(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter item ID");
+        String input = scanner.nextLine();
+        boolean deleted = repo.deleteItem(input);
+        if (! deleted){
+            System.out.println("Məhsul tapılmamışdır...");
+        } else {
+            System.out.println("Məhsul silinmişdir");
+        }
 
         run(repo);
 

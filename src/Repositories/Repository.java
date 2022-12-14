@@ -1,6 +1,7 @@
 package Repositories;
 
 import Models.Item;
+import Models.ItemCategorie;
 import Models.Receipt;
 import Models.SaleItem;
 import Seeders.GlobalSeeder;
@@ -206,6 +207,37 @@ public class Repository {
         }
 
         return receiptsOut;
+    }
+
+    public List<Item> findItemsOfCategory(ItemCategorie itemCategory){
+
+        List<Item> itemsOut = new ArrayList<>();
+
+
+        for (int i = 0; i< itemsList.size(); i++){
+
+            if (itemsList.get(i).getCategory() == itemCategory){
+                itemsOut.add(itemsList.get(i));
+            }
+        }
+
+        for (Item item: itemsOut){
+            System.out.println(item);
+        }
+
+        return itemsOut;
+    }
+
+    public boolean deleteItem(String inputId){
+        long id = Long.parseLong(inputId.split("[^0-9]")[0]);
+        for (int i = 0; i< itemsList.size(); i++){
+            if (itemsList.get(i).getId() == id){
+                itemsList.remove(i);
+                return true;
+            }
+        }
+
+        return false;
     }
 
 

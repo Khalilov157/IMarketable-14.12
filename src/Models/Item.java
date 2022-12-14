@@ -44,4 +44,8 @@ public class Item {
     public void setCount(int count) {
         this.count = count;
     }
+
+    public ItemCategorie getCategory() {
+        return category;
+    }
 }

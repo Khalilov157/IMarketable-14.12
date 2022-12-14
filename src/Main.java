@@ -13,11 +13,11 @@ import UI.Ui;
  + Umumi satisin geri qaytarilmasi
  + Verilen tarix araligina gore hemin tarix araligina olan satislarin qaytarilmasi
  + Verilen bir tarixe gore hemin tarix (il,ay,gun) ucun olan satislarin qaytarilmasi
- - Verilmis mebleg araligina gore edilmis satislarin qaytarilmasi
+ + Verilmis mebleg araligina gore edilmis satislarin qaytarilmasi
  + Verilmis nomreye esasen satisin qaytarilmasi
  - Yeni mehsul elave etmek
  - Mehsulun adini,sayini ve meblegini,categoriyasini deyismek (code-a gore tapilacaq)
- - Verilmis kateqoriyaya esasen hemin kateqoriyada olan mehsullarin qaytarilmasi
+ + Verilmis kateqoriyaya esasen hemin kateqoriyada olan mehsullarin qaytarilmasi
  - Verilmis qiymet araligina esasen hemin araliqda olan mehsullarin qaytarilmasi
  - Verilmis ada esasen mehsullarin search edilib qaytarilmasi
 
@@ -26,9 +26,9 @@ import UI.Ui;
 
     - 1 Yeni mehsul elave et  - userden yeni mehsul yaradilmasi ucun lazim olan melumatlari daxil edilmelidir
     - 2 Mehsul uzerinde duzelis et -  duzelis edilecek mehsulun code-u ve duzelis melumatlari daxil edilmelidir
-    - 3 Mehsulu sil - mehsulu kodu daxil edilmelidir
+    + 3 Mehsulu sil - mehsulu kodu daxil edilmelidir
     + 4 Butun mehsullari goster - butun mehsullar gosterilecek (kodu,adi,categoriyasi,sayi,qiymeti)
-    - 5 Categoriyasina gore mehsullari goster - usere var olan kateqoriyalar gosteilecek ve onlar arasinda bir secim etmelidir ve secilmis kateqoriyadan olan butun mehsullar gosterilir (kodu,adi,categoriyasi,sayi,qiymeti)
+    + 5 Categoriyasina gore mehsullari goster - usere var olan kateqoriyalar gosteilecek ve onlar arasinda bir secim etmelidir ve secilmis kateqoriyadan olan butun mehsullar gosterilir (kodu,adi,categoriyasi,sayi,qiymeti)
     - 6 Qiymet araligina gore mehsullari goster - userden minmum ve maximum qiymetleri daxil etmesi istenilir ve hemin qiymet araliginda olan mehsullar gosterilir (kodu, adi,categoriyasi,sayi,qiymeti)
     - 7 Mehsullar arasinda ada gore axtaris et - useden text daxil etmesi istenilir ve adinda hemin text olan butun mehsullar gosterilir (kodu, adi,categoriyasi,sayi,qiymeti)
 
