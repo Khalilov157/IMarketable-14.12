@@ -48,4 +48,11 @@ public class Item {
     public ItemCategorie getCategory() {
         return category;
     }
+
+    public void update(String name, Double price, int count, ItemCategorie category){
+        this.name = name;
+        this.price = price;
+        this.count = count;
+        this.category = category;
+    }
 }

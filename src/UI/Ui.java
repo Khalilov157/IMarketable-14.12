@@ -89,6 +89,7 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 2:
+                    editItem();
                     whileBreaker = false;
                     break;
                 case 3:
@@ -382,6 +383,52 @@ public class Ui {
         run(repo);
     }
 
+    public static void editItem(){
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter item id: ");
+        long itemId = Long.parseLong(scanner.nextLine());
+        Item itemToChange = repo.findItemById(itemId);
+        System.out.println(itemToChange);
+
+           System.out.println("Old name: "+ itemToChange.getName() +
+                   "\nEnter item name: ");
+    String itemName = scanner.nextLine();
+
+        System.out.println("Old price:"+ itemToChange.getPrice() +
+                "\nEnter item price: ");
+    Double itemPrice = Double.parseDouble(scanner.nextLine());
+
+        System.out.println("Old item count: "+ itemToChange.getCount() +
+                "\nEnter item count: ");
+    Integer itemCount = Integer.parseInt(scanner.nextLine());
+
+    ItemCategorie[] categoriesEnums = ItemCategorie.values();
+    String categories = "Kateqoriyalar: ";
+        for (int i = 0; i< categoriesEnums.length; i++){
+        categories =  categories + i + " - " + categoriesEnums[i] + "; ";
+    }
+        System.out.println(categories);
+
+        System.out.println("Old category: "+ itemToChange.getCategory() +
+                "\nEnter item category ID: ");
+
+    int globalItemId = -1;
+    boolean whilebreaker = true;
+    ItemCategorie itemCategory = null;
+        while (whilebreaker){
+            globalItemId = Integer.parseInt(scanner.nextLine());
+        if (globalItemId >=0 && globalItemId <5){
+            itemCategory = categoriesEnums[globalItemId];
+            whilebreaker = false;}
+    }
+    Item tempItem = new Item(itemName,itemPrice, itemCount, itemCategory, itemToChange.getId());
+        System.out.println(tempItem);
+        repo.updateItemToList(tempItem);
+
+    run(repo);
+
+    }
 
 
 }

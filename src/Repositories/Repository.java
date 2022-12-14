@@ -275,6 +275,9 @@ public class Repository {
     public void addItemToList(Item item){
         itemsList.add(item);
     }
+    public void updateItemToList(Item item){
+        findItemById(item.getId()).update(item.getName(),item.getPrice(),item.getCount(),item.getCategory());
+    }
 
 
 

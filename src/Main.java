@@ -16,7 +16,7 @@ import UI.Ui;
  + Verilmis mebleg araligina gore edilmis satislarin qaytarilmasi
  + Verilmis nomreye esasen satisin qaytarilmasi
  + Yeni mehsul elave etmek
- - Mehsulun adini,sayini ve meblegini,categoriyasini deyismek (code-a gore tapilacaq)
+ + Mehsulun adini,sayini ve meblegini,categoriyasini deyismek (code-a gore tapilacaq)
  + Verilmis kateqoriyaya esasen hemin kateqoriyada olan mehsullarin qaytarilmasi
  + Verilmis qiymet araligina esasen hemin araliqda olan mehsullarin qaytarilmasi
  + Verilmis ada esasen mehsullarin search edilib qaytarilmasi
@@ -25,7 +25,7 @@ import UI.Ui;
  1.1 1 secildikde Mehsullar uzerinde aparila bilinecek emeliyyatlarla bagli secimler gosterilir:
 
     + 1 Yeni mehsul elave et  - userden yeni mehsul yaradilmasi ucun lazim olan melumatlari daxil edilmelidir
-    - 2 Mehsul uzerinde duzelis et -  duzelis edilecek mehsulun code-u ve duzelis melumatlari daxil edilmelidir
+    + 2 Mehsul uzerinde duzelis et -  duzelis edilecek mehsulun code-u ve duzelis melumatlari daxil edilmelidir
     + 3 Mehsulu sil - mehsulu kodu daxil edilmelidir
     + 4 Butun mehsullari goster - butun mehsullar gosterilecek (kodu,adi,categoriyasi,sayi,qiymeti)
     + 5 Categoriyasina gore mehsullari goster - usere var olan kateqoriyalar gosteilecek ve onlar arasinda bir secim etmelidir ve secilmis kateqoriyadan olan butun mehsullar gosterilir (kodu,adi,categoriyasi,sayi,qiymeti)
@@ -51,27 +51,6 @@ public class Main {
 
         Ui.run(repo);
 
-
-/*
-
-        System.out.println(repo.getItemsList());
-
-        //=============================
-        //          Add new receipt
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Input :");
-        String input = scanner.nextLine();
-        repo.addReceipt(input);
-
-        //=============================
-        //          Remove item from receipt
-
-        System.out.println("Enter item ID , then receipt ID");
-        input = scanner.nextLine();
-        repo.refundItem(input);
-*/
 
     }
 }
