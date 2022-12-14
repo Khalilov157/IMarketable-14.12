@@ -116,6 +116,7 @@ public class Repository {
                 solditems.remove(i);
             }
         }
+        receipt.setPrice(GlobalSeeder.receiptPrice(receipt.getSoldItems()));
         return (receipt);
 
     }       return null;}
@@ -139,6 +140,37 @@ public class Repository {
         for (Item item: itemsList){
             System.out.println(item);
         }
+    }
+
+    public boolean deleteReceipt(String inputId){
+        long id = Long.parseLong(inputId.split("[^0-9]")[0]);
+        for (int i = 0; i< receiptsList.size(); i++){
+            if (receiptsList.get(i).getId() == id){
+                receiptsList.remove(i);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public List<Receipt> findReceiptsByDate(String dates){
+        List<Receipt> receiptsOut = new ArrayList<>();
+        String [] inputArr = dates.split(" ");
+        LocalDate startDate = LocalDate.parse(inputArr[0]);
+        LocalDate endDate = LocalDate.parse(inputArr[1]);
+
+
+
+        for (int i = 0; i< receiptsList.size(); i++){
+            LocalDate saleDate = receiptsList.get(i).getSaleDate();
+
+            if (saleDate.isAfter(startDate) && saleDate.isBefore(endDate)){
+                receiptsOut.add(receiptsList.get(i));
+            }
+        }
+
+        return receiptsOut;
     }
 
 

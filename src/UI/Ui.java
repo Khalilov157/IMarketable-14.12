@@ -146,6 +146,7 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 3:
+                    removeReceipt();
                     whileBreaker = false;
                     break;
 
@@ -154,6 +155,7 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 5:
+                    findReceiptsByDate();
                     whileBreaker = false;
                     break;
                 case 6:
@@ -216,6 +218,32 @@ public class Ui {
         }
 
         run(repo);
+    }
+
+    public static void removeReceipt(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter receipt ID");
+        String input = scanner.nextLine();
+        boolean deleted = repo.deleteReceipt(input);
+        if (! deleted){
+            System.out.println("Çek tapılmamışdır...");
+        } else {
+            System.out.println("Çek silinmişdir");
+        }
+
+        run(repo);
+
+    }
+
+    public static void findReceiptsByDate(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter start date and end date. Format: YYYY-MM-dd YYYY-MM-dd");
+        String input = scanner.nextLine();
+
+        System.out.println(repo.findReceiptsByDate(input));
+
+        run(repo);
+
     }
 
 

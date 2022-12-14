@@ -35,6 +35,10 @@ public class Receipt {
         return id;
     }
 
+    public LocalDate getSaleDate() {
+        return saleDate;
+    }
+
     public List<SaleItem> getSoldItems() {
         return soldItems;
     }
