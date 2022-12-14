@@ -22,11 +22,12 @@ public class Receipt {
 
     @Override
     public String toString() {
-        return "Id = " + id + "\nFinal price = " + finalPrice + "\nItems = " + soldItems + "\n Date: " + saleDate
+        return "\n-------------RECEIPT--------------\n" +
+                "Id = " + id + "\nFinal price = " + finalPrice + "\nItems = " + soldItems + "\n Date: " + saleDate
                 + "\n==================================================";
     }
 
-    public double getFinalPrice() {
+    public double getPrice() {
         return finalPrice;
     }
 
@@ -36,5 +37,9 @@ public class Receipt {
 
     public List<SaleItem> getSoldItems() {
         return soldItems;
+    }
+
+    public void setPrice(double finalPrice) {
+        this.finalPrice = finalPrice;
     }
 }

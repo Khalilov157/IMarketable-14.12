@@ -16,6 +16,14 @@ public class GlobalSeeder {
 
     private static long globalReceiptID = 0;
 
+    public static long getGlobalReceiptID() {
+        return globalReceiptID;
+    }
+
+    public static void setGlobalReceiptID(long globalReceiptID) {
+        GlobalSeeder.globalReceiptID = globalReceiptID;
+    }
+
     private static long globalSaleItemID = 0;
 
     public static List<Item> generateItems(int count){
@@ -55,15 +63,11 @@ public class GlobalSeeder {
             globalReceiptID++;
 
             receipts.add(tempReceipt);
-
-
         }
 
         for (int i = 0; i<receipts.size(); i++){
 //            System.out.println(receipts.get(i));
         }
-
-
 
         return receipts;
     }
@@ -129,23 +133,7 @@ public class GlobalSeeder {
         return false;
     }
 
-    /*
 
- + Satislar
- + Mehsullar
- + Satis elave etmek - satis elave edilerken hansi mehsullardan hansi sayda satis oldugu gonderilir
- + Satisdan mehsulun geri qaytarilmasi
- - Umumi satisin geri qaytarilmasi
- - Verilen tarix araligina gore hemin tarix araligina olan satislarin qaytarilmasi
- - Verilen bir tarixe gore hemin tarix (il,ay,gun) ucun olan satislarin qaytarilmasi
- - Verilmis mebleg araligina gore edilmis satislarin qaytarilmasi
- + Verilmis nomreye esasen satisin qaytarilmasi
- - Yeni mehsul elave etmek
- - Mehsulun adini,sayini ve meblegini,categoriyasini deyismek (code-a gore tapilacaq)
- - Verilmis kateqoriyaya esasen hemin kateqoriyada olan mehsullarin qaytarilmasi
- - Verilmis qiymet araligina esasen hemin araliqda olan mehsullarin qaytarilmasi
- - Verilmis ada esasen mehsullarin search edilib qaytarilmasi
-     */
 
 
 }

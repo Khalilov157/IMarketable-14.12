@@ -13,22 +13,22 @@ public class Repository {
 
     private List<Item> itemsList = new ArrayList<>();
 
-    private List<Receipt> receiptsList = new ArrayList<>();
+    private List<Receipt> receiptsList;
 
 
 
     public Repository() {
         this.itemsList = GlobalSeeder.generateItems(25);
-        this.receiptsList = GlobalSeeder.generateReceipts(120, this.itemsList);
+        this.receiptsList = GlobalSeeder.generateReceipts(0, this.itemsList);
     }
 
     public List<Item> getItemsList() {
         return itemsList;
     }
 
-    public List<Receipt> getReceiptsList() {
-        return receiptsList;
-    }
+//    public List<Receipt> getReceiptsList() {
+//        return receiptsList;
+//    }
 
 
 
@@ -38,10 +38,10 @@ public class Repository {
 
 
         if (saleItems.size()>0){
-            long receiptId = receiptsList.get(receiptsList.size()-1).getId()+1;
+            long receiptId = GlobalSeeder.getGlobalReceiptID();
+            GlobalSeeder.setGlobalReceiptID(++receiptId);
+
             double tempFinalPrice = GlobalSeeder.receiptPrice(saleItems);
-
-
             Receipt tempReceipt = new Receipt(receiptId, tempFinalPrice,saleItems, LocalDate.now());
             receiptsList.add(tempReceipt);
 
@@ -56,10 +56,10 @@ public class Repository {
 
         String [] idsList = idCount.split("[^0-9]");
         int elementId = 0;
-        SaleItem tempSaleitem = null;
+//        SaleItem tempSaleitem = null;
         List<SaleItem> saleItems = new ArrayList<>();
         int foundCount = 0;
-        for (int i = 1; i < idsList.length+1; i++){
+        for (int i = 0; i < idsList.length; i++){
 
             if ( i % 2 >0) {
                 elementId = Integer.parseInt(idsList[i - 1]);
@@ -69,7 +69,7 @@ public class Repository {
                 if (foundCount > 0) {
 
                     Item tempItem = findItemById(Integer.parseInt(idsList[i - 1]));
-                    tempSaleitem = new SaleItem(tempItem,Integer.parseInt(idsList[i]), tempItem.getPrice());
+                    SaleItem tempSaleitem = new SaleItem(tempItem,Integer.parseInt(idsList[i]), tempItem.getPrice());
                     saleItems.add(tempSaleitem);
                 }}}
         return saleItems;
@@ -99,13 +99,14 @@ public class Repository {
         return null;
     }
 
-    public void refundItem (String input){
+    public Receipt refundItem (String input){
 
         String [] inputArr = input.split("[^0-9]");
         long saleItemId = Long.parseLong(inputArr[0]);
         long receiptId = Long.parseLong(inputArr[1]);
 
         Receipt receipt = findReceiptById(receiptId);
+        if (receipt != null){
         List<SaleItem> solditems = receipt.getSoldItems();
 
         for (int i = 0; i < solditems.size(); i++) {
@@ -115,8 +116,9 @@ public class Repository {
                 solditems.remove(i);
             }
         }
+        return (receipt);
 
-    }
+    }       return null;}
 
     public Receipt findReceiptById(long receiptId){
         for (Receipt receipt: receiptsList){
@@ -126,6 +128,17 @@ public class Repository {
             }
         }
         return null;
+    }
+
+    public void printReceipts(){
+        for (Receipt receipt: receiptsList){
+            System.out.println(receipt);
+        }
+    }
+    public void printItems(){
+        for (Item item: itemsList){
+            System.out.println(item);
+        }
     }
 
 

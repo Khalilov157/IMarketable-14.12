@@ -19,7 +19,10 @@ public class Item {
 
     @Override
     public String toString() {
-        return id + " " + name + " Price :" + price + " Count = " + count + " Category :" + category;
+        return "\n--------------MƏHSUL--------------"
+                +"\nID: " + id + "\nMəhsulun adı: " + name + "\nCategory :" + category
+                + "\nCount = " + count  + "\nPrice :" + price
+                + "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-";
     }
 
     public Double getPrice() {
