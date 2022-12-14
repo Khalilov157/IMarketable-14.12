@@ -172,6 +172,22 @@ public class Repository {
 
         return receiptsOut;
     }
+    public List<Receipt> findReceiptsBySpecificDate(String dates){
+        List<Receipt> receiptsOut = new ArrayList<>();
+        LocalDate startDate = LocalDate.parse(dates.split(" ")[0]);
+
+
+
+        for (int i = 0; i< receiptsList.size(); i++){
+            LocalDate saleDate = receiptsList.get(i).getSaleDate();
+
+            if (saleDate.isEqual(startDate)){
+                receiptsOut.add(receiptsList.get(i));
+            }
+        }
+
+        return receiptsOut;
+    }
 
 
 

@@ -162,6 +162,7 @@ public class Ui {
                     whileBreaker = false;
                     break;
                 case 7:
+                    findReceiptsBySpecificDate();
                     whileBreaker = false;
                     break;
                 case 8:
@@ -241,6 +242,16 @@ public class Ui {
         String input = scanner.nextLine();
 
         System.out.println(repo.findReceiptsByDate(input));
+
+        run(repo);
+
+    }
+    public static void findReceiptsBySpecificDate(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter date for receipts. Format: YYYY-MM-dd");
+        String input = scanner.nextLine();
+
+        System.out.println(repo.findReceiptsBySpecificDate(input));
 
         run(repo);
 
