@@ -14,6 +14,14 @@ public class GlobalSeeder {
 
     private static long globalItemID = 0;
 
+    public static long getGlobalItemID() {
+        return globalItemID;
+    }
+
+    public static void setGlobalItemID(long globalItemID) {
+        GlobalSeeder.globalItemID = globalItemID;
+    }
+
     private static long globalReceiptID = 0;
 
     public static long getGlobalReceiptID() {

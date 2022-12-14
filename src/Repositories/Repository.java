@@ -16,7 +16,9 @@ public class Repository {
 
     private List<Receipt> receiptsList;
 
-
+    public void setItemsList(List<Item> itemsList) {
+        this.itemsList = itemsList;
+    }
 
     public Repository() {
         this.itemsList = GlobalSeeder.generateItems(25);
@@ -268,6 +270,10 @@ public class Repository {
         }
 
         return itemsListOut;
+    }
+
+    public void addItemToList(Item item){
+        itemsList.add(item);
     }
 
 

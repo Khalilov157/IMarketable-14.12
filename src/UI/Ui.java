@@ -1,8 +1,10 @@
 package UI;
 
+import Models.Item;
 import Models.ItemCategorie;
 import Models.Receipt;
 import Repositories.Repository;
+import Seeders.GlobalSeeder;
 
 import java.util.Scanner;
 
@@ -83,6 +85,7 @@ public class Ui {
 
             switch (input){
                 case 1:
+                    createItem();
                     whileBreaker = false;
                     break;
                 case 2:
@@ -333,6 +336,48 @@ public class Ui {
         String input = scanner.nextLine();
 
         System.out.println(repo.findItemsByName(input));
+
+        run(repo);
+    }
+
+    public static void createItem(){
+
+        System.out.println("New item creation: \n");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter item name: ");
+        String itemName = scanner.nextLine();
+
+        System.out.println("Enter item price: ");
+        Double itemPrice = Double.parseDouble(scanner.nextLine());
+
+        System.out.println("Enter item count: ");
+        Integer itemCount = Integer.parseInt(scanner.nextLine());
+
+        ItemCategorie[] categoriesEnums = ItemCategorie.values();
+        String categories = "Kateqoriyalar: ";
+        for (int i = 0; i< categoriesEnums.length; i++){
+            categories =  categories + i + " - " + categoriesEnums[i] + "; ";
+        }
+        System.out.println(categories);
+
+        System.out.println("Enter item category ID: ");
+
+        int itemId = -1;
+        boolean whilebreaker = true;
+        ItemCategorie itemCategory = null;
+        while (whilebreaker){
+            itemId = Integer.parseInt(scanner.nextLine());
+            if (itemId >=0 && itemId <5){
+            itemCategory = categoriesEnums[itemId];
+            whilebreaker = false;}
+        }
+        long tempId = GlobalSeeder.getGlobalItemID() + 1;
+        GlobalSeeder.setGlobalItemID(tempId);
+        Item tempItem = new Item(itemName,itemPrice, itemCount, itemCategory, tempId);
+        System.out.println(tempItem);
+        repo.addItemToList(tempItem);
 
         run(repo);
     }

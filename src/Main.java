@@ -15,16 +15,16 @@ import UI.Ui;
  + Verilen bir tarixe gore hemin tarix (il,ay,gun) ucun olan satislarin qaytarilmasi
  + Verilmis mebleg araligina gore edilmis satislarin qaytarilmasi
  + Verilmis nomreye esasen satisin qaytarilmasi
- - Yeni mehsul elave etmek
+ + Yeni mehsul elave etmek
  - Mehsulun adini,sayini ve meblegini,categoriyasini deyismek (code-a gore tapilacaq)
  + Verilmis kateqoriyaya esasen hemin kateqoriyada olan mehsullarin qaytarilmasi
- - Verilmis qiymet araligina esasen hemin araliqda olan mehsullarin qaytarilmasi
- - Verilmis ada esasen mehsullarin search edilib qaytarilmasi
+ + Verilmis qiymet araligina esasen hemin araliqda olan mehsullarin qaytarilmasi
+ + Verilmis ada esasen mehsullarin search edilib qaytarilmasi
 
 
  1.1 1 secildikde Mehsullar uzerinde aparila bilinecek emeliyyatlarla bagli secimler gosterilir:
 
-    - 1 Yeni mehsul elave et  - userden yeni mehsul yaradilmasi ucun lazim olan melumatlari daxil edilmelidir
+    + 1 Yeni mehsul elave et  - userden yeni mehsul yaradilmasi ucun lazim olan melumatlari daxil edilmelidir
     - 2 Mehsul uzerinde duzelis et -  duzelis edilecek mehsulun code-u ve duzelis melumatlari daxil edilmelidir
     + 3 Mehsulu sil - mehsulu kodu daxil edilmelidir
     + 4 Butun mehsullari goster - butun mehsullar gosterilecek (kodu,adi,categoriyasi,sayi,qiymeti)
